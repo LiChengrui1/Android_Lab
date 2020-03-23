@@ -29,7 +29,6 @@
         android:text="GREEN"
         android:background="@color/green"
         android:textColor="@color/black"
-        tools:ignore="MissingConstraints"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/Blue"/>
@@ -44,7 +43,6 @@
         android:gravity="center"
         android:background="@color/indigo"
         android:textColor="@color/white"
-        tools:ignore="MissingConstraints"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/Blue"/>
@@ -58,7 +56,6 @@
         android:text="VIOLET"
         android:background="@color/violet"
         android:textColor="@color/black"
-        tools:ignore="MissingConstraints"
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -72,7 +69,7 @@
         android:text="ORANGE"
         android:background="@color/orange"
         android:textColor="@color/black"
-        tools:ignore="MissingConstraints"
+
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -86,7 +83,7 @@
         android:text="RED"
         android:background="@color/red"
         android:textColor="@color/black"
-        tools:ignore="MissingConstraints"
+
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -99,7 +96,7 @@
         android:text="YELLOW"
         android:background="@color/yellow"
         android:textColor="@color/black"
-        tools:ignore="MissingConstraints"
+
         android:gravity="center"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
