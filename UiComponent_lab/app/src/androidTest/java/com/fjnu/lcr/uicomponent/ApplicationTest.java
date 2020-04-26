@@ -1,4 +1,4 @@
-package edu.fjnu.cse.uicomponenttutorials;
+package com.fjnu.lcr.uicomponent;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

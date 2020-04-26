@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.fjnu.cse.uicomponenttutorials">
+    package="com.fjnu.lcr.uicomponent">
 
     <application
         android:allowBackup="true"
@@ -8,18 +8,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.fjnu.lcr.uicomponent.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProgressBarTutorial" />
-        <activity android:name=".ContextualActionBarTutorial" />
-        <activity android:name=".SimpleAdapterTutorial" />
-        <activity android:name=".CustomDialogTutorial" />
-        <activity android:name=".XmlDefineMenuTutorial"></activity>
+        <activity android:name="com.fjnu.lcr.uicomponent.ContextualActionBar" />
+        <activity android:name="com.fjnu.lcr.uicomponent.SimpleAdapterTutorial" />
+        <activity android:name="com.fjnu.lcr.uicomponent.CustomDialog" />
+        <activity android:name="com.fjnu.lcr.uicomponent.XmlDefineMenuTutorial"></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,6 @@
-package edu.fjnu.cse.uicomponenttutorials;
+package com.fjnu.lcr.uicomponent;
 
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
@@ -14,14 +13,12 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ListView;
 
 import java.util.HashMap;
 import java.util.Set;
 
-public class ContextualActionBarTutorial extends ListActivity {
+public class ContextualActionBar extends ListActivity {
 
     private String[] data = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine","Ten"};
 
@@ -62,7 +59,10 @@ public class ContextualActionBarTutorial extends ListActivity {
                 inflater.inflate(R.menu.contextual_menu, menu);
                 return true;
             }
-
+            /*
+             * 可在此方法中监听标题栏Menu的监听，从而进行相应操作
+             * 设置actionMode菜单每个按钮的点击事件
+             */
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
                 // TODO Auto-generated method stub

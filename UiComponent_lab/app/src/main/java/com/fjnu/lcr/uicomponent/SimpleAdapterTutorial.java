@@ -1,4 +1,4 @@
-package edu.fjnu.cse.uicomponenttutorials;
+package com.fjnu.lcr.uicomponent;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import java.util.HashMap;
 
 public class SimpleAdapterTutorial extends Activity {
 
-    //initialize view's
     ListView simpleListView;
     String[] animalName={"Lion","Tiger","Monkey","Dog","Cat","Elephant"};//animal names array
     int[] animalImages={R.drawable.lion,R.drawable.tiger,R.drawable.monkey,R.drawable.dog,R.drawable.cat,R.drawable.elephant};//animal images array
@@ -23,7 +22,7 @@ public class SimpleAdapterTutorial extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_adapter_tutorial);
-        simpleListView=(ListView)findViewById(R.id.simpleListView);
+        simpleListView=(ListView)findViewById(R.id.ListView);
 
         ArrayList<HashMap<String,String>> arrayList=new ArrayList<>();
         for (int i=0;i<animalName.length;i++)
@@ -33,12 +32,13 @@ public class SimpleAdapterTutorial extends Activity {
             hashMap.put("image",animalImages[i]+"");
             arrayList.add(hashMap);//add the hashmap into arrayList
         }
+
         String[] from={"name","image"};//string array
         int[] to={R.id.textView,R.id.imageView};//int array of views id's
-        SimpleAdapter simpleAdapter=new SimpleAdapter(this,arrayList,R.layout.list_view_items,from,to);//Create object and set the parameters for simpleAdapter
+        SimpleAdapter simpleAdapter=new SimpleAdapter(this,arrayList,R.layout.list_view_items,from,to);
         simpleListView.setAdapter(simpleAdapter);//sets the adapter for listView
 
-        //perform listView item click event
+        // 为列表项的单击事件绑定事件监听器
         simpleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

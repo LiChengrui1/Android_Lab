@@ -5,7 +5,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="200dp"
+        android:height="100dp"
+        android:textSize="12pt"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:id="@+id/custom_dialog_btn"
         android:text="@string/custom_dialog_tutorial"/>
 </RelativeLayout>

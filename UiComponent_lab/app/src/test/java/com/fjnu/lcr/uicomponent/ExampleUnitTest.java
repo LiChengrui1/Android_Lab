@@ -1,4 +1,4 @@
-package edu.fjnu.cse.uicomponenttutorials;
+package com.fjnu.lcr.uicomponent;
 
 import org.junit.Test;
 

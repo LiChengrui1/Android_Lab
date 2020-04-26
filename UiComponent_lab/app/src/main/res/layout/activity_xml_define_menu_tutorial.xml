@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="edu.fjnu.cse.uicomponenttutorials.XmlDefineMenuTutorial">
+    tools:context="com.fjnu.lcr.uicomponent.XmlDefineMenuTutorial">
 
     <TextView
         android:layout_width="match_parent"

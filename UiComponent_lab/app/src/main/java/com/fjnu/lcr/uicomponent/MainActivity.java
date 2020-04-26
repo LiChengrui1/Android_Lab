@@ -1,9 +1,8 @@
-package edu.fjnu.cse.uicomponenttutorials;
+package com.fjnu.lcr.uicomponent;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,7 +26,7 @@ public class MainActivity extends Activity {
         btn_custom_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CustomDialogTutorial.class);
+                Intent intent = new Intent(MainActivity.this, CustomDialog.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +44,7 @@ public class MainActivity extends Activity {
         btn_action_context.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ContextualActionBarTutorial.class);
+                Intent intent = new Intent(MainActivity.this, ContextualActionBar.class);
                 startActivity(intent);
             }
         });
