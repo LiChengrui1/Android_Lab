@@ -2,23 +2,17 @@
 
 #### 1. 初始化界面
 
-首先是初始化界面，添加几个按钮跳转到不同的界面布局示例  
+首先是初始化界面，添加几个按钮跳转到不同的界面布局示例
 
-###### <img src="./image/1.png" style="zoom:25%;" />
-
-添加按钮点击事件，点击跳转页面
-
-```java
-public void onClick(View view) {
-    setContentView(R.layout.linear_layout);
-}
-```
+###### <img src="./image/1.png" width="35%" />
 
 #### 2. 线性布局页面
 
-###### <img src="./image/2.png" style="zoom:25%;" />
+大概思路：
 
 这里线性布局采用嵌套线性布局的方式进行，以一个垂直线性布局嵌套四个水平线性布局。
+
+###### <img src="./image/2.png" width="35%" />
 
 白色边界的设定，drawable中新建xml文件：
 
@@ -30,7 +24,7 @@ public void onClick(View view) {
 </shape>
 ```
 
-layout中使用，添加边界：
+layout中使用下面的语句，添加边界：
 
 ```
 android:background="@drawable/textview_border"
@@ -38,7 +32,7 @@ android:background="@drawable/textview_border"
 
 #### 3. 约束布局页面
 
-###### <img src="./image/3.png" style="zoom:25%;" />
+###### <img src="./image/3.png" width="35%" />
 
 注意使用gravity以及layout_constraintRight_toRightOf等属性来控制控件在界面中的显示。
 
@@ -46,7 +40,7 @@ android:background="@drawable/textview_border"
 
 #### 4. 表格布局
 
-###### <img src="./image/4.png" style="zoom:25%;" />
+###### <img src="./image/4.png" width="35%" />
 
 注意：
 
