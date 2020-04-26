@@ -236,7 +236,7 @@ public class CustomDialog extends Activity {
 
 
 
-## 使用XML定义菜单
+## 实验三：使用XML定义菜单
 
 1.重写onOptionsItemSelected就可以实现optionmenu，
 
