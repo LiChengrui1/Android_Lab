@@ -548,3 +548,9 @@ private class SelectionAdapter extends ArrayAdapter<String> {
 点击垃圾桶取消：
 
 ###### <img src="./image/13.png" width="40%" />
+
+
+
+**动态演示：**
+
+###### <img src="./image/17.gif" width="40%" />
