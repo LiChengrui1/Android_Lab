@@ -258,6 +258,10 @@ public class CustomDialog extends Activity {
 
 ###### <img src="./image/15.png" width="40%" />
 
+登录动态演示：
+
+###### <img src="./image/16.gif" width="40%" />
+
 
 
 ## 实验三：使用XML定义菜单
