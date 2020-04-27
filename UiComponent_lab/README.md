@@ -177,18 +177,31 @@ dialog的布局样式：
 
 CustomDialog实现类：
 
+给按钮添加了**响应事件**，
+
+点击**弹出登录框**，输入账号密码。
+
+再给对话框的**消极按钮**和**积极按钮**分别添加响应事件：
+
+**点击消极按钮**：**弹出toast**，内容为 “cancel" 。
+
+点击**积极按钮**，登录成功，我这里写的是**跳转到第三题的页面**，同时**弹出一个toast**，显示的内容为 ”Login Success“。
+
 ```java
 package com.fjnu.lcr.uicomponent;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class CustomDialog extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -212,10 +225,14 @@ public class CustomDialog extends Activity {
                 .setPositiveButton(R.string.signin, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(CustomDialog.this, XmlDefineMenuTutorial.class);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_LONG).show();
                     }
                 })
                 .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        Toast.makeText(getApplicationContext(),"Cancel",Toast.LENGTH_LONG).show();
                     }
                 });
         builder.create();
@@ -223,7 +240,6 @@ public class CustomDialog extends Activity {
     }
 
 }
-
 ```
 
 效果如下：
@@ -233,6 +249,14 @@ public class CustomDialog extends Activity {
 点击后：
 
 ###### <img src="./image/5.png" width="40%" />
+
+点击取消，弹出toast
+
+###### <img src="./image/14.png" width="40%" />
+
+点击登录，跳转到第三题的页面，并弹出登录成功toast。
+
+###### <img src="./image/15.png" width="40%" />
 
 
 
