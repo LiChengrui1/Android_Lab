@@ -116,6 +116,8 @@ SimpleCursorAdapter  adapter
 
 ###### <img src="./image/2.png" width="40%" />
 
+
+
 ## 按标题搜索
 
 为了使我们可以实现搜索功能，需要一个搜索框，
