@@ -124,6 +124,11 @@ public class NotesList extends ListActivity {
 
         // The view IDs that will display the cursor columns, initialized to the TextView in
         // noteslist_item.xml
+
+        /**
+         * 这里的 R.id.text1, R.id.text2 分别对应的是布局文件中两个textview的id
+         * 而且顺序要一致。
+         */
         int[] viewIDs = {R.id.text1, R.id.text2};
 
         // Creates the backing adapter for the ListView.

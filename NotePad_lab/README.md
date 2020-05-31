@@ -13,7 +13,15 @@
 
 **（1）在布局文件中增加一个TextView来显示时间戳**
 
+​		textAppearance字体大小的一些参数设置：
+
+- ?android:attr/textAppearanceLarge
+- ?android:attr/textAppearanceMedium
+- ?android:attr/textAppearanceSmall
+  对应的字体大小分别为：18dp,16dp,14dp
+
 ```xml
+<!--添加一个垂直的线性布局-->
 <TextView
     android:id="@+id/text1"
     android:layout_width="match_parent"
@@ -26,6 +34,7 @@
     android:textSize="20sp"
     />
 
+<!--添加显示时间的TextView-->
 <TextView
     android:id="@+id/text2"
     android:layout_width="match_parent"
@@ -40,14 +49,22 @@
     />
 ```
 
+
+
 **（2）数据库中已有文本创建时间和修改时间连个字段，在NodeEditor.java中，找到updateNode()这个函数，选取修改时间这一字段，并将其格式化存入数据库**
 
 ```java
 Date nowTime = new Date(System.currentTimeMillis());
+//日期格式化
 SimpleDateFormat sdFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+//代码中的retStrFormatNowDate即为转化后的时间格式，
+//将其用ContentValues的put方法存入数据库。
 String retStrFormatNowDate = sdFormatter.format(nowTime);
 values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, retStrFormatNowDate);
 ```
+
+
 
 **（3）在NoteList.java的PROJECTION数组中增加该字段的描述，并在SimpleCursorAdapter中的参数viewsIDs和dataColumns增加子段描述，以达到将其读出和显示的目的**
 
@@ -59,24 +76,51 @@ private static final String[] PROJECTION = new String[] {
 };
 ```
 
+
+
 **（4）装配的时候需要装配相应的日期，所以dataColumns,viewIDs这两个参数需要加入时间**
 
 SimpleCursorAdapter前加入：
 
+这里的 R.id.text1,R.id.text2 分别对应的是布局文件中两个textview的id
+
 ```java
 String[] dataColumns = { NotePad.Notes.COLUMN_NAME_TITLE,NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE} ;
-int[] viewIDs = { R.id.text1,R.id.text2 };
+
+/**
+ * 这里的 R.id.text1, R.id.text2 分别对应的是布局文件中两个textview的id
+ * 而且顺序要一致。
+ */
+int[] viewIDs = {R.id.text1, R.id.text2};
+
+// Creates the backing adapter for the ListView.
+SimpleCursorAdapter  adapter
+	= new SimpleCursorAdapter (
+    this,                             // The Context for the ListView
+    R.layout.noteslist_item,          // Points to the XML for a list item
+    cursor,                           // The cursor to get items from
+    dataColumns,
+    viewIDs
+    );
 ```
 
 **效果如下：**
 
 ###### <img src="./image/1.png" width="40%" />
 
-记得修改安卓模拟器的时区，选择东八区：
+**注意：**
+
+如果使用的是安卓模拟器，
+
+为了保持时间一致，要记得修改时区，选择东八区：
 
 ###### <img src="./image/2.png" width="40%" />
 
 ## 按标题搜索
+
+为了使我们可以实现搜索功能，需要一个搜索框，
+
+那么先给菜单栏，增加一个图标，点击，来到搜索页面。
 
 **（1）找到菜单的list_options_menu.xml文件，添加一个搜索的item**
 
@@ -88,6 +132,10 @@ int[] viewIDs = { R.id.text1,R.id.text2 };
  android:showAsAction="always"
  />
 ```
+
+菜单效果如下：
+
+###### <img src="./image/4.png" width="40%" />
 
 **（2）在NotesList中找到onOptionsItemSelected方法，在switch中添加搜索的case语句**
 
@@ -244,7 +292,11 @@ public class NoteSearch extends ListActivity implements SearchView.OnQueryTextLi
 
 **效果如下：**
 
+动态：
+
 ###### <img src="./image/3.gif" width="40%" />
+
+静态：
 
 ###### <img src="./image/image-20200518014839908.png" width="40%" />
 
